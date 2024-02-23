@@ -1,0 +1,16 @@
+<script>
+    let formData = new FormData();
+        formData.append("plcace-order", "1");
+        formData.append("cartData", JSON.stringify([{a:1,b:"asdasd "}]));
+        fetch("https://vividinnovations.co.ke/api/", {
+            method: "POST",
+            body: formData,
+        })
+            .then((req) => req.json())
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+</script>

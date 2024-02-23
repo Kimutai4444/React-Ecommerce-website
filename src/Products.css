@@ -1,0 +1,32 @@
+.featured-products {
+  margin: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  width: 200px; 
+  margin: 10px; 
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h4 {
+  margin: 10px 0;
+}
+
+.product-card p {
+  margin-bottom: 10px;
+}
+
+.product-link:hover {
+  background-color: #0056b3;
+}
+.home-container{
+  margin-top: 80px;
+}

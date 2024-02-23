@@ -1,0 +1,28 @@
+.featured-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categories-card {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.categories-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.categories-card h4 {
+  margin: 10px 0;
+}
+
+.categories-card p {
+  margin-bottom: 10px;
+}
+h3{
+  align-items: center;
+  justify-content: center;
+}
