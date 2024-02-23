@@ -1,20 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useContext, useEffect } from "react";
-import { CartContext } from "./Contexts";
-import "./Header.css"
+import { CartContext } from "../Contexts";
+import "./Header.css";
 
 const Header = () => {
   const [cartData, setCartData] = useContext(CartContext);
- useEffect(() => {
-   console.log(cartData);
- }, []);
+  useEffect(() => {
+    console.log(cartData);
+  }, []);
 
   return (
     <div className="navbar">
       <div className="nav-links">
-        <Link to ="/" className='nav-link'>Home</Link>
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
         <Link to="/Login" className="nav-link">
           Login
         </Link>
@@ -34,6 +36,6 @@ const Header = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Header
+export default Header;

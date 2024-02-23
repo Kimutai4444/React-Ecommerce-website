@@ -1,29 +1,29 @@
-import React, { useContext ,useEffect} from 'react'
-import { theme } from './App'
-import "./Profile.css"; 
-import profile from "./profile.jpeg"
-import { useNavigate } from 'react-router-dom';
-import Header from './Header';
+import React, { useContext, useEffect } from "react";
+import { theme } from "./App";
+import "./Profile.css";
+import profile from "./profile.jpeg";
+import { useNavigate } from "react-router-dom";
+import Header from "./Components/Header";
 
 function Profile() {
   const [appTheme, setAppTheme] = useContext(theme);
   const navigate = useNavigate();
 
   useEffect(() => {
-    let islogedIn = localStorage.getItem("stored")
+    let islogedIn = localStorage.getItem("stored");
     if (!islogedIn) {
-      navigate("/Login")
+      navigate("/Login");
     }
-  }, [])
-  
+  }, []);
+
   function logOut() {
-    localStorage.removeItem("stored")
-    navigate("/")
+    localStorage.removeItem("stored");
+    navigate("/");
   }
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className="profile">
         {/* {appTheme} */}
         <div className="profile-content">

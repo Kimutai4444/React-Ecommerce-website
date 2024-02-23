@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import Header from "./Header";
-import { theme } from "./App";
+import Header from "../Header";
+import { theme } from "../App";
 import { Link } from "react-router-dom";
-import "./Products.css"
+import "./Products.css";
 import Product1Image from "./Product1.jpeg";
 import Product2Image from "./Product2.jpeg";
 import Product3Image from "./Product3.jpeg";
 import Product4Image from "./Product4.jpeg";
 import { useContext } from "react";
-import { CartContext } from "./Contexts";
+import { CartContext } from "../Contexts";
 
 function Products() {
   const featuredProducts = [
@@ -38,37 +38,41 @@ function Products() {
     },
   ];
   const [cartData, setCartData] = useContext(CartContext);
-   useEffect(() => {
-     console.log(cartData);
-   }, []);
-  
+  useEffect(() => {
+    console.log(cartData);
+  }, []);
+
   function addToCart(product) {
     let newCartData = [...cartData];
     newCartData.push(product);
-    setCartData(newCartData)
+    setCartData(newCartData);
 
-    localStorage.setItem("cart",JSON.stringify(newCartData))
+    localStorage.setItem("cart", JSON.stringify(newCartData));
   }
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className="home-container">
-      <h2 className="welcome-text">Welcome to Dunky Online Shop</h2>
-      <h3>Featured Products</h3>
-      <div className="featured-products">
-        {featuredProducts.map((product) => (
-          <div key={product.id} className="product-card">
-            <img src={product.image} alt={product.name} />
-            <h4>{product.name}</h4>
-            <p>${product.price}</p>
-            <button onClick={() => {
-              addToCart(product)
-            }}>Add to Cart</button>
-          </div>
-        ))}
+        <h2 className="welcome-text">Welcome to Dunky Online Shop</h2>
+        <h3>Featured Products</h3>
+        <div className="featured-products">
+          {featuredProducts.map((product) => (
+            <div key={product.id} className="product-card">
+              <img src={product.image} alt={product.name} />
+              <h4>{product.name}</h4>
+              <p>${product.price}</p>
+              <button
+                onClick={() => {
+                  addToCart(product);
+                }}
+              >
+                Add to Cart
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }

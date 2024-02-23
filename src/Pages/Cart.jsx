@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import { CartContext } from "./Contexts";
+import { CartContext } from "../Contexts";
 import "./Cart.css";
 import { FaShoppingCart } from "react-icons/fa";
-import Header from "./Header";
+import Header from "../Components/Header";
 
 function Cart() {
   const [cartData, setCartData] = useContext(CartContext);

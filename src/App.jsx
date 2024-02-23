@@ -6,7 +6,7 @@ import HOC1 from "./HOC1.jsx";
 import Mycomponent from "./Mycomponent.jsx";
 import AudioPlayer from "./Audio.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./Header.jsx";
+import Header from "./Components/Header.jsx";
 import Products from "./Products.jsx";
 import Categories from "./Categories.jsx";
 import Profile from "./Profile.jsx";
@@ -33,8 +33,8 @@ function App() {
     try {
       let stored = localStorage.getItem("cart");
       if (stored) {
-        let data = JSON.parse(stored)
-        setCartData(data)
+        let data = JSON.parse(stored);
+        setCartData(data);
       }
     } catch (e) {
       console.log(e);
@@ -42,8 +42,8 @@ function App() {
   }
 
   useEffect(() => {
-    getCartData()
-  },[])
+    getCartData();
+  }, []);
   return (
     <>
       {/* <FetchData/> */}
